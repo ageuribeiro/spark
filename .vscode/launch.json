@@ -6,9 +6,12 @@
     "configurations": [
         {
             "name": "Spark",
-            "type": "java",
+            "type": "C++",
             "request": "launch",
-            "mainClass": "your.main.class.here" // Replace with your main class
+            "program": "${workspaceFolder}/path/to/your/executable", // Replace with the path to your executable
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
