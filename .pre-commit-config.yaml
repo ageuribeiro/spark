@@ -1,0 +1,21 @@
+repos:
+-   repo: https://github.com/ageuribeiro/spark
+    rev: v0.1.0
+    hooks:
+    -   id: black
+        language_version: python3.12.6
+        stages: [commit]
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 4.0.1
+    hooks:
+    -   id: flake8
+        language_version: python3.12.6
+        stages: [commit]
+-   repo: local
+    hooks:
+      - id: requirements
+        name: requirements
+        entry: pip -m freeze > requirements.txt
+        language: system
+        pass_filenames: false
+        stages: [commit]
