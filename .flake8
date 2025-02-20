@@ -1,17 +1,7 @@
 [flake8]
-ignore = E203, E266, E501, W503
+ignore = E722, W503
 max-line-length = 120
-max-complexity = 18
 per-file-ignores =
     # imported but unused
     __init__.py: F401
-    # missing type annotation for self
-    *.py: T484
-    # missing type annotation for self
-    __init__.py: T484
-    # missing type annotation for self
-    tests/*.py: T484
-    # missing type annotation for self
-    tests/__init__.py: T484
-    # missing type annotation for self  
     
