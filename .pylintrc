@@ -3,9 +3,16 @@ disable=
       E0015,
       W0611,
       W0612,
+      W0012,
       C0114,
       C0116,
+      C0301,
+      C0302,
+      C0303,
       C0304,
+      C0305,
+      W0303,
+      C0411,
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
 # only in one or another interpreter, leading to false positives when analysed.
