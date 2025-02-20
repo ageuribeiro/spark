@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 class DBConnectionHandler:
     """Sqlalchemy database connection"""
-    
+
     def __init__(self):
         self.__connection_string = "sqlite:///default.db"
         self.session = None
@@ -16,12 +16,12 @@ class DBConnectionHandler:
         """
         engine = create_engine(self.__connection_string)
         return engine
-    
+
     def __enter__(self):
-        engine =  create_engine(self.__connection_string)
+        engine = create_engine(self.__connection_string)
         session_maker = sessionmaker()
         self.session = session_maker(bind=engine)
         return self
-    
+
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.session.close() #pylint: disable=no-member
+        self.session.close()  # pylint: disable=no-member
