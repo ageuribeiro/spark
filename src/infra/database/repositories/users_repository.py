@@ -12,9 +12,7 @@ class UsersRespository(UsersRepositoryInterface):
         with DBConnectionHandler() as database:
             try:
                 new_registry = UsersEntity(
-                    first_name=first_name,
-                    last_name=last_name,
-                    age=age
+                    first_name=first_name, last_name=last_name, age=age
                 )
                 database.session.add(new_registry)
                 database.session.commit()

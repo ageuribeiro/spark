@@ -15,11 +15,7 @@ def test_insert_user():
     mocked_age = 51
 
     users_repository = UsersRepository()
-    users_repository.insert_user(
-        mocked_first_name,
-        mocked_last_name,
-        mocked_age
-    )
+    users_repository.insert_user(mocked_first_name, mocked_last_name, mocked_age)
 
     query = """
         SELECT * FROM users
@@ -27,9 +23,7 @@ def test_insert_user():
         AND last_name = '{}'
         AND age = {}
     """.format(
-        mocked_first_name,
-        mocked_last_name,
-        mocked_age
+        mocked_first_name, mocked_last_name, mocked_age
     )
 
     response = connection.execute(text(query))
@@ -38,7 +32,6 @@ def test_insert_user():
     assert registry.first_name == mocked_first_name
     assert registry.last_name == mocked_last_name
     assert registry.age == mocked_age
-
 
     connection.execute(
         text(

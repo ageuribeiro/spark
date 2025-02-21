@@ -11,7 +11,7 @@ class UserRegister(UserRegisterInterface):
     def register(self, first_name: str, last_name: str, age: int) -> Dict:
         self.__validate_name(first_name)
         self.__validate_name(last_name)
-        
+
         self.__register_user_information(first_name, last_name, age)
         response = self.__format_response(first_name, last_name, age)
         return response
@@ -21,13 +21,13 @@ class UserRegister(UserRegisterInterface):
         if not first_name.isalpha():
             raise HttpBadRequestError("Nome inválido para a busca")
 
-        if len(first_name) >18:
+        if len(first_name) > 18:
             raise HttpBadRequestError("Nome muito grande para executar a procura")
 
-        
-    def __register_user_information(self, first_name: str, last_name: str, age: int) -> None:
+    def __register_user_information(
+        self, first_name: str, last_name: str, age: int
+    ) -> None:
         self.__user_repository.insert_user(first_name, last_name, age)
-
 
     @classmethod
     def __format_response(cls, first_name: str, last_name: str, age: int) -> Dict:
@@ -37,8 +37,8 @@ class UserRegister(UserRegisterInterface):
             "attributes": {
                 "first_name": first_name,
                 "last_name": last_name,
-                "age": age
-            }
+                "age": age,
+            },
         }
 
         return response

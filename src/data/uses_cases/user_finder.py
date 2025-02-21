@@ -22,24 +22,19 @@ class UserFinder(UserFinderInterface):
 
         if len(first_name) > 18:
             raise HttpBadRequestError("Nome muito grande para executar a procura")
-        
+
     def __search_user(self, first_name: str) -> List[Users]:
         users = self.__users_repository.select_user(first_name)
-        if users == []: raise HttpNotFoundError("Usuário não encontrado")
+        if users == []:
+            raise HttpNotFoundError("Usuário não encontrado")
         return users
 
     @classmethod
     def __format_response(cls, users: List[Users]) -> Dict:
         attributes = []
         for user in users:
-            attributes.append(
-                { "first_name": user.first_name, "age": user.age }
-            )
+            attributes.append({"first_name": user.first_name, "age": user.age})
 
-        response = {
-            "type": "Users",
-            "count": len(users),
-            "attributes": attributes
-        }
+        response = {"type": "Users", "count": len(users), "attributes": attributes}
 
         return response

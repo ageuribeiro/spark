@@ -9,8 +9,7 @@ class DBConnectionHandler:
         (
             "mysql+pymysql",
             "root",
-            "myPass"
-            "localhost",
+            "myPass" "localhost",
             "3306",
             "my_db",
         )
