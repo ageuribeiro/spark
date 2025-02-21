@@ -1,21 +1,35 @@
 repos:
--   repo: https://github.com/ageuribeiro/spark
-    rev: v0.1.0
-    hooks:
-    -   id: black
-        language_version: python3.12.6
-        stages: [commit]
--   repo: https://gitlab.com/pycqa/flake8
-    rev: 4.0.1
-    hooks:
-    -   id: flake8
-        language_version: python3.12.6
-        stages: [commit]
--   repo: local
-    hooks:
-      - id: requirements
-        name: requirements
-        entry: pip -m freeze > requirements.txt
-        language: system
-        pass_filenames: false
-        stages: [commit]
+    -   repo: local
+        hooks:
+        -   id: pylint
+            name: pylint
+            entry: pylint
+            language: system
+            types: [python]
+            args:
+                [
+                    "-rn", # Only display messages
+                    "-sn", # Don't display the score
+                    "--rcfile=.pylintrc", # Link to your config file
+                    "--load-plugins=pylint.extensions.docparams", # Load an extension
+                ]
+    -   repo: https://github.com/ageuribeiro/spark
+        rev: v0.1.0
+        hooks:
+        -   id: black
+            language_version: python3.12.6
+            stages: [commit]
+    -   repo: https://gitlab.com/pycqa/flake8
+        rev: 4.0.1
+        hooks:
+        -   id: flake8
+            language_version: python3.12.6
+            stages: [commit]
+    -   repo: local
+        hooks:
+        -   id: requirements
+            name: requirements
+            entry: pip -m freeze > requirements.txt; git add requirements.txt
+            language: system
+            pass_filenames: false
+            stages: [commit]
