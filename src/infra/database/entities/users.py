@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
 from src.infra.database import Base
 
 
@@ -9,10 +8,9 @@ class Users(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False, unique=True)
-    password = Column(String, nullable=False)
-    email = Column(String, nullable=False)
-    id_pet = relationship("Pets")
+    first_name = Column(String, nullable=False)
+    last_name = Column(String, nullable=False)
+    age = Column(Integer, nullable=False)
 
     def __repr__(self):
         return f"User: name={self.name}, email={self.email}]"
