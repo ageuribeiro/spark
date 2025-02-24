@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy import text
 from src.infra.database.settings.connection import DBConnectionHandler
-from .users_repository import UsersRespository
+from src.infra.database.repositories.users_repository import UsersRespository
 
 
 db_connection_handler = DBConnectionHandler()

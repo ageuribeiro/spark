@@ -1,4 +1,4 @@
-from src.infra.db.tests.users_repository import UsersRepositorySpy
+from src.infra.database.tests.users_repository import UsersRepositorySpy
 from .user_register import UserRegister
 
 

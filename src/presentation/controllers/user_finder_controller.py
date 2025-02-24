@@ -1,4 +1,4 @@
-from src.presentation.interfaces.crontroller_interface import ControllerInterface
+from src.presentation.interfaces.controller_interface import ControllerInterface
 from src.domain.use_cases.user_finder import UserFinder as UserFinderInterface
 from src.presentation.http_types.http_request import HttpRequest
 from src.presentation.http_types.http_response import HttpResponse
