@@ -2,10 +2,10 @@ from typing import List
 from src.infra.database.settings.connection import DBConnectionHandler
 from src.infra.database.entities.users import Users as UsersEntity
 from src.data.interfaces.users_repository import UsersRepositoryInterface
-from src.domain.models import Users
+from src.domain.models.users import Users
 
 
-class UsersRespository(UsersRepositoryInterface):
+class UsersRepository(UsersRepositoryInterface):
 
     @classmethod
     def insert_user(cls, first_name: str, last_name: str, age: int) -> None:

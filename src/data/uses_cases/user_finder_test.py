@@ -1,5 +1,5 @@
 from src.infra.database.tests.users_repository import UsersRepositorySpy
-from .user_finder import UserFinder
+from src.data.uses_cases.user_finder import UserFinder
 
 
 def test_find():

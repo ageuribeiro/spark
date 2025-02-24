@@ -1,8 +1,8 @@
 from typing import Dict, List
-from src.domain.use_cases.user_finder import UserFinder as UserFinderInterface
-from src.data.interfaces.user_repository import UsersRepositoryInterface
-from src.domain.models import Users
-from src.errors.type import HttpNotFoundError, HttpBadRequestError
+from src.domain.uses_cases.user_finder import UserFinder as UserFinderInterface
+from src.data.interfaces.users_repository import UsersRepositoryInterface
+from src.domain.models.users import Users
+from src.errors.types import HttpNotFoundError, HttpBadRequestError
 
 
 class UserFinder(UserFinderInterface):

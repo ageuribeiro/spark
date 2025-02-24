@@ -1,7 +1,7 @@
 from typing import Dict
-from src.domain.use_cases.user_register import UserRegister as UserRegisterInterface
-from src.data.interfaces.user_repository import UsersRepositoryInterface
-from src.errors.type import HttpBadRequestError
+from src.domain.uses_cases.user_register import UserRegister as UserRegisterInterface
+from src.data.interfaces.users_repository import UsersRepositoryInterface
+from src.errors.types import HttpBadRequestError
 
 
 class UserRegister(UserRegisterInterface):

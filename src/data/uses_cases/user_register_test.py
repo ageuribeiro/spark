@@ -1,5 +1,5 @@
 from src.infra.database.tests.users_repository import UsersRepositorySpy
-from .user_register import UserRegister
+from src.data.uses_cases.user_register import UserRegister
 
 
 def test_register():

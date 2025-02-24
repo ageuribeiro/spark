@@ -5,13 +5,13 @@ from sqlalchemy.orm import sessionmaker
 class DBConnectionHandler:
 
     def __init__(self) -> None:
-        self.__connection_string = "{}://{}:{}@{}:{}/{}".format
+        self.__connection_string = "mssql+pymssql//{}:{}@{}:{}/{}".format
         (
-            "mysql+pymysql",
-            "root",
-            "myPass" "localhost",
-            "3306",
-            "my_db",
+            "sa",
+            "sa",
+            "localhost",
+            "1433",
+            "teste_telmex_db",
         )
         self.__engine = self.__create_database_engine()
         self.session = None

@@ -13,4 +13,4 @@ class Users(Base):
     age = Column(Integer, nullable=False)
 
     def __repr__(self):
-        return f"User: name={self.name}, email={self.email}]"
+        return f"User: name={self.first_name} {self.last_name}, age={self.age}]"
